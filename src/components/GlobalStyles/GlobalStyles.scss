@@ -3,9 +3,12 @@
 
 :root {
     --primary: #fc5102;
+    --defaultfontsize: 1rem;
 }
 
 * {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
@@ -14,6 +17,6 @@ body {
 
 html {
     font-family: 'Montserrat', sans-serif;
-    font-size: 1.6rem;
+    font-size: var(--defaultfontsize);
     text-rendering: optimizeSpeed;
 }
