@@ -1,7 +1,11 @@
 .wrapper {
-    height: 90px;
+    height: 70px;
     background-color: var(--primary);
-    width: 100%;
+    opacity: 90%;
+    width: 100vw;
+    position: sticky;
+    top: 0;
+    overflow: visible;
 }
 .inner {
     height: 100%;
@@ -13,6 +17,8 @@
 .nav-logo {
     display: flex;
     justify-self: start;
+    width: 2.5rem;
+    margin-right: 200px;
 }
 .nav-menu {
     width: 35%;
@@ -27,4 +33,14 @@
     text-decoration: none;
     font-size: 18px;
     font-weight: bold;
+}
+.but {
+    padding: 10px 15px;
+    font-weight: bold;
+    font-size: 18px;
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid #ffffff;
+    border-radius: 25px;
+    color: #ffffff;
+    margin: 2px;
 }

@@ -1,0 +1,29 @@
+.wrapper {
+    width: 1240px;
+    padding: 10px;
+}
+.ad-footer {
+    width: 100%;
+    background-color: white;
+    border-radius: 20px;
+    height: 270px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.info-footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+ul {
+    padding-right: 100px;
+    margin: 10px;
+    list-style: none;
+    font-weight: bold;
+    line-height: 30px;
+}
+.first-order {
+    color: var(--primary);
+    font-size: 18px;
+}
