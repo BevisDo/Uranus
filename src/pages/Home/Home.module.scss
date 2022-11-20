@@ -1,13 +1,16 @@
 .slider {
-    // position: relative;
-    height: 100vh;
+    position: relative;
+    // height: 100vh;
     display: flex;
 
     // justify-content: center;
     // align-items: center;
 }
 .image {
-    height: 100vh;
+    height: 100%;
+    width: 100%;
+    // width: 1000px;
+    // border-radius: 10px;
 }
 
 .right-arrow {
@@ -29,4 +32,14 @@
     z-index: 10;
     cursor: pointer;
     user-select: none;
+}
+.slide {
+    opacity: 50%;
+    transition-duration: 1s;
+}
+.slide.active {
+    opacity: 1;
+    transform: translateX(100);
+    transition-duration: 2s;
+    transform: scale(1.08);
 }

@@ -5,13 +5,7 @@ import SliderImage from './SliderImage';
 const cx = classNames.bind(styles);
 
 function Home() {
-    return (
-        <div className={cx('wrapper')}>
-            <div className={cx('slider')}>
-                <SliderImage slides={SliderData} />
-            </div>
-        </div>
-    );
+    return <SliderImage slides={SliderData} />;
 }
 
 export default Home;
