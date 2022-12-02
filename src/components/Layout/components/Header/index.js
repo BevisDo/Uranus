@@ -4,12 +4,26 @@ import styles from './Header.module.scss';
 import { MenuItems } from './MenuItems';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRightToBracket } from '@fortawesome/free-solid-svg-icons';
+import { useEffect, useState } from 'react';
 
 const cx = classNames.bind(styles);
 
+console.log('Header Render');
 function Header() {
+    const [cusheader, setCusheader] = useState('trans');
+
+    useEffect(() => {
+        const handleSroll = () => {
+            if (window.scrollY >= 99) {
+                setCusheader('normal');
+            } else {
+                setCusheader('trans');
+            }
+        };
+        window.addEventListener('scroll', handleSroll);
+    }, []);
     return (
-        <header className={cx('wrapper')}>
+        <header className={cx('wrapper', cusheader)}>
             <div className={cx('inner')}>
                 <Link to="/">
                     <div className={cx('nav-logo')}>
