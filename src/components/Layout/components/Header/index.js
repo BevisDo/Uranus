@@ -14,7 +14,7 @@ function Header() {
 
     useEffect(() => {
         const handleSroll = () => {
-            if (window.scrollY >= 99) {
+            if (window.scrollY > 0) {
                 setCusheader('normal');
             } else {
                 setCusheader('trans');
@@ -50,9 +50,11 @@ function Header() {
                 </div>
                 <div className={cx('nav-but')}>
                     <button className={cx('but')}>ENG</button>
-                    <button className={cx('but')}>
-                        SIGN IN <FontAwesomeIcon icon={faArrowRightToBracket} />
-                    </button>
+                    <Link to="signin">
+                        <button className={cx('but')}>
+                            SIGN IN <FontAwesomeIcon icon={faArrowRightToBracket} />
+                        </button>
+                    </Link>
                 </div>
             </div>
         </header>

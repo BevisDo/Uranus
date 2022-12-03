@@ -1,12 +1,12 @@
 import classNames from 'classnames/bind';
-import { CoursesData } from '../../../../pages/Home/CoursesData';
+import { CoursesData } from '../../pages/Home/CoursesData';
 import styles from './Card.module.scss';
 
 const cx = classNames.bind(styles);
 
-function Card({ cards }) {
+function Card() {
     return (
-        <div className={cx('card')}>
+        <div className={cx('cards')}>
             {CoursesData.map((card, index) => {
                 return (
                     <div className={cx('card-body')} key={index}>

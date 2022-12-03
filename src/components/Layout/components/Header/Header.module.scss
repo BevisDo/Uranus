@@ -8,6 +8,7 @@
     top: 0;
     z-index: 11;
     overflow: visible;
+    transition: ease-out 0.2s;
 }
 
 .wrapper.normal {
@@ -27,7 +28,9 @@
     height: 100%;
     display: flex;
     align-items: center;
-    padding: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+
     justify-content: space-between;
 }
 .nav-logo {
@@ -50,6 +53,7 @@
     font-size: 18px;
     font-weight: bold;
 }
+
 .but {
     padding: 10px 15px;
     font-weight: bold;
@@ -59,4 +63,11 @@
     border-radius: 25px;
     color: #ffffff;
     margin: 2px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: ease-out 0.5s;
+}
+.but:hover {
+    background: rgba(255, 255, 255, 0.562);
+    transition: ease-out 0.5s;
 }

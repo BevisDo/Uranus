@@ -1,51 +1,5 @@
-.slider {
-    // position: relative;
-    // height: 100vh;
-
+.content {
     display: flex;
-    width: 100vw;
-    overflow: hidden;
-    height: 1000px;
-    // justify-content: center;
-    // align-items: center;
-}
-.image {
-    // height: 100%;
-    width: 100%;
-    // width: 1000px;
-    // border-radius: 10px;
-}
-
-.right-arrow {
-    position: absolute;
-    top: 50%;
-    right: 32px;
-    font-size: 5rem;
-    color: white;
-    z-index: 10;
-    cursor: pointer;
-    user-select: none;
-}
-.left-arrow {
-    position: absolute;
-    top: 50%;
-    left: 32px;
-    font-size: 5rem;
-    color: white;
-    z-index: 10;
-    cursor: pointer;
-    user-select: none;
-}
-.slide {
-    opacity: 50%;
-    transition-duration: 1s;
-}
-.slide.active {
-    opacity: 1;
-    transform: translateX(100);
-    transition-duration: 2s;
-    transform: scale(1.08);
-}
-.content-home {
-    margin-bottom: 10px;
+    flex-direction: column;
+    align-items: center;
 }

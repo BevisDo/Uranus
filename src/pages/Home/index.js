@@ -1,17 +1,15 @@
 import classNames from 'classnames/bind';
-import { Fragment } from 'react';
-import Card from '../../components/Layout/components/Card';
-import { CoursesData } from './CoursesData';
+import Card from '../../components/Card';
 import styles from './Home.module.scss';
-import { SliderData } from './SliderData';
-import SliderImage from './SliderImage';
+import { SliderData } from '../../components/Slider/SliderData';
+import SliderImage from '../../components/Slider/SliderImage';
 const cx = classNames.bind(styles);
 
 function Home() {
     return (
-        <div className={cx('content-home')}>
+        <div className={cx('content')}>
             <SliderImage slides={SliderData} />
-            <Card cards={CoursesData} />
+            <Card />
         </div>
     );
 }
