@@ -1,11 +1,47 @@
 import classNames from 'classnames/bind';
+import { useState, useContext } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { AuthContext } from '../../contexts/AuthContext';
 import styles from './Signin.module.scss';
 
 const cx = classNames.bind(styles);
 function Signin() {
+    //context
+    const { loginUser } = useContext(AuthContext);
+
+    //Router
+    const navigate = useNavigate();
+
+    //local state
+    const [loginForm, setLoginForm] = useState({
+        username: '',
+        password: '',
+    });
+    const { username, password } = loginForm;
+
+    const onChangeLoginForm = (event) =>
+        setLoginForm({
+            ...loginForm,
+            [event.target.name]: event.target.value,
+        });
+
+    const login = async (event) => {
+        event.preventDefault();
+
+        try {
+            const loginData = await loginUser(loginForm);
+            if (loginData.success) {
+                navigate('/dashboard');
+            } else {
+            }
+        } catch (error) {
+            console.log(error);
+        }
+    };
+
     return (
-        <div className={cx('wrapper')}>
-            <div className={cx('form')}>
+        <>
+            <form className={cx('login-form')} onSubmit={login}>
                 <div className={cx('nav-logo')}>
                     <svg width="52" height="69" viewBox="0 0 52 69" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path
@@ -17,8 +53,32 @@ function Signin() {
                     </svg>
                 </div>
                 <h1>CHÀO MỪNG ĐẾN VỚI URANUS</h1>
-            </div>
-        </div>
+                <input
+                    className={cx('username-ip')}
+                    name="username"
+                    placeholder="Tên đăng nhập"
+                    type="text"
+                    required
+                    value={username}
+                    onChange={onChangeLoginForm}
+                ></input>
+                <input
+                    className={cx('password-ip')}
+                    name="password"
+                    type="password"
+                    placeholder="Mật khẩu"
+                    required
+                    value={password}
+                    onChange={onChangeLoginForm}
+                ></input>
+                <button className={cx('login-btn')} type="submit">
+                    DANG NHAP
+                </button>
+                <p>
+                    Chua co tai khoan?<Link to="/register">Dang Ky</Link>
+                </p>
+            </form>
+        </>
     );
 }
 
