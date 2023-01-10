@@ -21,17 +21,19 @@ const AuthContextProvider = ({ children }) => {
         }
 
         try {
+            console.log('DA TAO');
             const response = await axios.get(`${apiUrl}/auth`);
             if (response.data.success) {
                 dispatch({ type: 'SET_AUTH', payload: { isAuthenticated: true, user: response.data.user } });
             }
         } catch (error) {
+            console.log('DA XOA');
             localStorage.removeItem(LOCAL_STORAGE_TOKEN_NAME);
             setAuthToken(null);
             dispatch({ type: 'SET_AUTH', payload: { isAuthenticated: false, user: null } });
         }
     };
-    useEffect(()=>loadUser(),[ ])
+    useEffect(() => loadUser(), []);
     //Login
     const loginUser = async (userFrom) => {
         try {

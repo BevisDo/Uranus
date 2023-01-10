@@ -5,7 +5,12 @@ import { AuthContext } from '../../contexts/AuthContext';
 import styles from './Signin.module.scss';
 
 const cx = classNames.bind(styles);
+
 function Signin() {
+    const {
+        authState: { authLoading, isAuthenticated },
+    } = useContext(AuthContext);
+
     //context
     const { loginUser } = useContext(AuthContext);
 
@@ -38,6 +43,7 @@ function Signin() {
             console.log(error);
         }
     };
+    if (isAuthenticated) navigate('/dashboard');
 
     return (
         <>
